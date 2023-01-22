@@ -1,91 +1,116 @@
 @use "./colors" as colors;
 
-* {
+//============CSS Reset==========//
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
+html,
 body {
-	height: 99vh;
+	min-height: 100vh;
+	font-size: 16px;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+ul,
+ol {
+	list-style: none;
+}
+//============CSS Reset==========//
+
+body {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: flex-start;
 	font-family: "Outfit", sans-serif;
 	background-color: colors.$Light_gray;
 }
 
-body p {
-	font-size: 15px;
-}
 .wrapper {
-	display: flex;
-	margin-top: 5vh;	
-	// height: 430px;
-	height: 100%;
-
+	flex: 1 0 auto;
+	max-width: 375px;
 }
 .card {
-	width: 100%;
-	height: 430px;
-	padding: 15px 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: colors.$White;
-	border: none;
-	border-radius: 20px;
-	&-qr_code--img {
-		width: 250px;
-		border: none;
+	width: 320px;
+	border-radius: 8px;
+	margin-top: 30px;
+	padding: 22px;
+	text-align: center;
+	& img {
+		width: 280px;
 		border-radius: 10px;
 	}
+	> h1 {
+		font-size: 1.5rem;
+		padding: 15px 0;
+	}
+	& p {
+		font-size: 1.5 rem;
+		color: colors.$Grayish_blue;
+		margin: 10px 0;
+	}
 }
-
-.card-text {
-	width: 250px;
-	padding: 10px;
-	&--head {
-		& p {
-			text-align: center;
-			font-weight: 700;
-			font-size: 20px;
-			color: colors.$Dark_blue;
+.footer {
+	position:absolute;
+	bottom: 0;
+	padding: 0.5rem;
+	width: 100%;
+	color: #ddd;
+	background-color: #fff;
+	font-size: 0.7rem;
+	& .attribution {
+		text-align: center;
+		& a {
+			text-decoration: none;
+			color: #ddd;
+			&:visited {
+				color: #ddd;
+			}
 		}
 	}
-	&--info {
-		padding: 5px;
-		margin: 10px 0px;
-		text-align: center;
-		font-weight: 400;
-		font-size: 14px;
-		font-weight: 400;
-		color: colors.$Grayish_blue;
-	}
 }
 
-.footer{
-	display: flex;
-	text-align: center;
-	padding: 3px;
-	font-size: 12px;
-	& a{
-		text-decoration: none;
-		cursor: pointer;
-		
-	}
-}
-
-
-@media (min-width: 375px) {
-	.wrapper {
-		width: 300px;
-		margin-top: 10vh;
-		padding: 10px;
-		
-	}
-}
 @media (min-width: 1440px) {
 	.wrapper {
-		margin-top: 15vh;
-				
+		max-width: 375px;
 	}
 }
