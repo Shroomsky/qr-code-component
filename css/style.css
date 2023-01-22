@@ -74,9 +74,9 @@ body {
   align-items: center;
   background-color: hsl(0deg, 0%, 100%);
   width: 320px;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 30px;
-  padding: 22px;
+  padding: 20px;
   text-align: center;
 }
 .card img {
@@ -94,8 +94,6 @@ body {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   padding: 0.5rem;
   width: 100%;
   color: #000;
